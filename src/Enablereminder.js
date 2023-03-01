@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from "react";
 import firebase from './firebase.js'
 import './Enablereminder.css'
-import {Link, useParams} from 'react-router-dom'
+import {Link, useHistory, useParams} from 'react-router-dom'
 const EnableReminder = ({uid}) => {
   let {paramid}=useParams()
   let userId;
@@ -21,6 +21,7 @@ const EnableReminder = ({uid}) => {
   const [recur2Days, setRecur2Days] = useState(false);
   const [reminder,setReminder]=useState([]);
   const [data,setData]=useState([])
+  const history=useHistory("")
   useEffect( ()=>{
 
 
@@ -94,6 +95,7 @@ const handleEnable= async(uid,id)=>{
     
   }) 
         console.log(res)
+        history.push('/viewreminder')
       }  
  
   catch(err) {
