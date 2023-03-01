@@ -156,7 +156,10 @@ reminder[1].recurrence.recur2Days?<p>2Days</p>:<></>}
 </td>
 <td>
 
-     <button onClick={()=>handleDelete(reminder[0])}>Delete</button>
+    { /*<button onClick={()=>handleDelete(reminder[0])}>Delete</button>*/}
+    {
+      <Link to={`/deletereminder/${reminder[0]}`}><button className="action-button">Delete</button></Link>
+    }
 
 {
 reminder[1].status=="active"?<Link to={`/disablereminder/${reminder[0]}`}><button className="action-button">Disable</button></Link>:<Link to={`/enablereminder/${reminder[0]}`}><button className="action-button">Enable</button></Link>

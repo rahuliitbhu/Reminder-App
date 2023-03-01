@@ -31,7 +31,7 @@ function Welcome() {
     </ul>
   </nav>:<nav>
     <ul>
-      <li><Link to="/viewreminder">View Reminder</Link></li>
+      <li><Link to="/home">Home</Link></li>
 
       <li><Link to="/logout">Logout</Link></li>
     </ul>

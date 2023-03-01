@@ -15,6 +15,7 @@ import Welcome from './Welcome';
 import Logout from './Logout';
 import Thank from './Thank';
 import { useEffect, useState } from 'react';
+import DeleteReminderSection from './Deletereminder';
 function App() {
   const [uid,setUser] = useState(null)
   useEffect(() => {
@@ -42,6 +43,9 @@ function App() {
       </Route>
       <Route  path="/signup">
       <Signup/>
+      </Route>
+      <Route  path="/deletereminder/:paramid?">
+      <DeleteReminderSection />
       </Route>
       <Route  path="/home">
       <Home uid={uid}/>

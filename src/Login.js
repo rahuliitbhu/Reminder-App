@@ -36,7 +36,7 @@ const handleRetry = () => {
       
             const res = await firebase.auth().signInWithEmailAndPassword(email,password)
             localStorage.setItem('useremail',email)
-            history.push('/viewreminder')
+            history.push('/home')
      
             console.log(res.user.email)
            
