@@ -32,9 +32,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <Welcome/>
-      <Route exact path="/">
-         <Welcome />
-      </Route>
+
       <Route uid={uid} path="/modify/:paramid?">
       <ModifyReminder/>
       </Route>
