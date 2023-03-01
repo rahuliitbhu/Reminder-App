@@ -31,6 +31,7 @@ function App() {
 
     <div className="App">
       <BrowserRouter>
+      <Welcome/>
       <Route exact path="/">
          <Welcome />
       </Route>
