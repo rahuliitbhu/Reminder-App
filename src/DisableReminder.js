@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from "react";
 
 import firebase from './firebase.js'
-import {Link, useParams} from 'react-router-dom'
+import {Link, useParams,useHistory} from 'react-router-dom'
 import './DisableReminder.css'
 function DisableReminderSection({uid}) {
   let {paramid}=useParams()
@@ -14,7 +14,7 @@ function DisableReminderSection({uid}) {
   const [reminder,setReminder]=useState([]);
   const [selectedReminder, setSelectedReminder] = useState("");
   const [description, setDescription] = useState("");
-
+  const history=useHistory("")
 
   let array=[]
 
@@ -47,6 +47,7 @@ function DisableReminderSection({uid}) {
 
 
   const handleIntialise=(data)=>{
+
     const res=  data.map((item)=>{
   
            if(paramid && item[0]==paramid)
@@ -62,6 +63,8 @@ function DisableReminderSection({uid}) {
            }
 
       })
+
+
     //  console.log(paramid)
      
 }
@@ -81,6 +84,7 @@ function DisableReminderSection({uid}) {
       
     }) 
        console.log(res)
+       history.push('/viewreminder')
         }  
     
     catch(err) {
@@ -212,7 +216,7 @@ function DisableReminderSection({uid}) {
         <textarea id="desc" value={description} readOnly />
       </div>
      
-       <button  onClick={()=>handleDisable(id,reminder[0])}>button</button>
+       <button  onClick={()=>handleDisable(id,reminder[0])}>Confirm</button>
        <Link to="/home"><button type="button">Back</button></Link>
        <Link to="/logout"><button type="button">Logout</button></Link>
      
