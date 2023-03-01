@@ -23,7 +23,7 @@ function Welcome() {
   return (
     <div>
 
-     { !userId?<nav>
+     { !localStorage.getItem("useremail")?<nav>
     <ul>
       <li><Link to="/viewreminder">View Reminder</Link></li>
       <li><Link to="/login">Login</Link></li>
