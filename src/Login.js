@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Link, Redirect, useHistory } from 'react-router-dom'
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import firebase from './firebase.js'
@@ -13,6 +13,8 @@ const Login = () => {
 
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")
+  const history =useHistory("")
+
  /* 
 useEffect( ()=>{
     const result=firebase.firestore().collection('Users').get().then((dataRef)=>{
@@ -34,6 +36,8 @@ const handleRetry = () => {
       
             const res = await firebase.auth().signInWithEmailAndPassword(email,password)
             localStorage.setItem('useremail',email)
+            history.push('/viewreminder')
+     
             console.log(res.user.email)
            
         
